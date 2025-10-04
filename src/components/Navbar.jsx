@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const {setShowSearch} = useContext(ShopContext);
   return (
-    <div className='flex items-center justify-betweenpy-5 font-medium'>
+    <div className='flex items-center justify-between py-5 font-medium'>
     
 
       <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>
@@ -34,7 +34,7 @@ const Navbar = () => {
            </NavLink>
      </ul>
 
-    <div className='fkex items-centergap-6'> 
+    <div className='flex items-center gap-6'> 
 
     </div>
 
