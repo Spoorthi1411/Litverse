@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react'
-import {products} from "../assets/assets.js";
+
 import {createContext,useState} from "react";
 import { useNavigate } from 'react-router-dom';
+import { products } from '../assets/assets';
 
 export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
 
     const currency = '$';
-    const delivery_fee =10;
+    const delivery_fee = 10;
     const [cartItems,setCartItems]= useState({});
     const navigate = useNavigate();
 
@@ -55,8 +56,7 @@ const ShopContextProvider = (props) => {
 
     const value = {
         products,
-        currency,
-        delivery_fee,
+        currency,delivery_fee,
         cartItems,addToCart,
         updateQuantity,
         getCartAmount,navigate,
