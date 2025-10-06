@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import {products} from "../assets/assets";
 import {createContext,useState} from "react";
+import { useNavigate } from 'react-router-dom';
 
 export const ShopContext = createContext();
 
@@ -13,6 +14,8 @@ const ShopContextProvider = (props) => {
     const [showSearch,setShowSearch] = useState(false);
 
     const [cartItems,setCartItems]= useState({});
+
+    const navigate = useNavigate();
 
     const addToCart = async(itemId)=>{
 
@@ -29,16 +32,8 @@ const ShopContextProvider = (props) => {
 
     const getCartCount = () => {
         let totalCount = 0;
-        for(const items in cartItems){
-            for(const item in cartItems[items]){
-                try {
-                    if(cartItems[items[item]] > 0){
-                        totalCount += cartItems[items][item];
-                    }
-                } catch (error) {
-                    
-                }
-            }
+        for (const itemId in cartItems) {
+            totalCount += cartItems[itemId]; // cartItems[itemId] is a number
         }
         return totalCount;
     }
@@ -50,13 +45,24 @@ const ShopContextProvider = (props) => {
         setCartItems(cartData);
     }
 
+    const getCartAmount = () => {
+        let totalAmount = 0;
+        for (const itemId in cartItems) {
+            const itemInfo = products.find((product) => product._id === itemId);
+            if (itemInfo) {
+                totalAmount += itemInfo.price * cartItems[itemId];
+            }
+        }
+        return totalAmount;
+    }
 
     const value = {
         products,
         currency,
-        delivery_fee,
+        delivery_fee,navigate,
         search, setSearch, showSearch, setShowSearch,
         cartItems,addToCart,getCartCount,
+        getCartAmount,
         updateQuantity,
     }
   return (
