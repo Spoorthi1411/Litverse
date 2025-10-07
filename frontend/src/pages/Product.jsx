@@ -4,11 +4,11 @@ import { assets } from '../assets/assets';
 import { ShopContext } from '../context/ShopContext';
 import RelatedProducts from '../components/RelatedProducts';
 
-const product = () => {
+const Product = () => {
 
     const { productId } = useParams();
     const { products, currency, addToCart } = useContext(ShopContext);
-    cont [productData, setProductData] = useState(false);
+    const [productData, setProductData] = useState(false);
     const [image, setImage] = useState('');
     // const [size, setSize] = useState('')
 
@@ -29,10 +29,10 @@ const product = () => {
 
   return productData ? (
     <div className='border-t-2 pt-10 transition-opacity ease-in duration-500 opacity-100'>
-        //product Data
+        {/*product Data*/}
         <div className='flex gap-12 sm:gap-12 flex-col sm:flex-row'>
             
-            //product images
+            {/*product images*/}
             <div className='flex-1 flex flex-col-reverse gap-3 sm:flex-row'>
                 <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full'>
                     {
@@ -46,19 +46,19 @@ const product = () => {
                 </div>
             </div>
 
-            // Product INFO 
+            {/* Product INFO */}
             <div className='flex-1'>
                 <h1 className='font-medium text-2xl mt-2'>{productData.name}</h1>
                 <div className='flex item-center gap-1 mt-2'>
-                    <img src={assets.star_icon} alt="" className="w-3 5" />
-                    <img src={assets.star_icon} alt="" className="w-3 5" />
-                    <img src={assets.star_icon} alt="" className="w-3 5" />
-                    <img src={assets.star_icon} alt="" className="w-3 5" />
-                    <img src={assets.star_dull_icon} alt="" className="w-3 5" />
-                    <p className='pl-2'>(122)</p>
+                    <img src={assets.star_icon} alt="" className="w-3 h-4" />
+                    <img src={assets.star_icon} alt="" className="w-3 h-4" />
+                    <img src={assets.star_icon} alt="" className="w-3 h-4" />
+                    <img src={assets.star_icon} alt="" className="w-3 h-4" />
+                    <img src={assets.star_dull_icon} alt="" className="w-3 h-4" />
+                    <p className='pl-2 text-sm text-gray-500'>(122)</p>
                 </div>
-                <p className='mt-5 text-3xl font-medium'>{currency}{productData.price}</p>
-                <p className='mt-5 text-gray-500 md:w-4/5 '>{productData.description}</p>
+                <p className='mt-2 text-2xl font-medium'>{currency}{productData.price}</p>
+                <p className='mt-3 text-gray-500 md:w-4/5 '>{productData.description}</p>
                 <div className='flex flex-col gap-4 my-8'>
                     {/* <p>Select Size</p>
                     <div className='flex gap-2'>
@@ -67,7 +67,7 @@ const product = () => {
                         ))}
                     </div> */}
                 </div>
-                <button onClick={() => addToCart(productData._id)} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700'>ADD TO CART</button>
+                <button onClick={() => addToCart(productData._id)} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700 cursor-pointer'>ADD TO CART</button>
                 <hr className='mt-8 sm:w-4/5'/>
                 <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
                     <p>100% Original Product.</p>
@@ -98,4 +98,4 @@ const product = () => {
   ) : <div className='opacity-0'></div>
 }
 
-export default product
+export default Product
