@@ -107,23 +107,24 @@ const Collection = () => {
                 </div>
             </div>
             {/* SubCategory filter */}
+            {category.length > 0 && (
             <div className={`border border-gray-300 pl-5 py-3 my-5 ${showFilter ? '' : 'hidden'} sm:block `}>
-                <p className='mb-3 text-sm font-medium'>CATEGORIES</p>
+                <p className='mb-3 text-sm font-medium'>SUB CATEGORIES</p>
                 <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
                     <p className='flex gap-2'>
-                        <input className='w-3' type="checkbox" value={'Price'} onChange={toggleSubCategory}/> Price
+                        <input className='w-3' type="checkbox" value={'Bestseller'} onChange={toggleSubCategory}/> Bestseller
+                    </p>
+                    <p className='flex gap-2'>
+                        <input className='w-3' type="checkbox" value={'Least Price'} onChange={toggleSubCategory}/>Least Price
                     </p>
                     <p className='flex gap-2'>
                         <input className='w-3' type="checkbox" value={'Languages'} onChange={toggleSubCategory}/> Languages
                     </p>
                     <p className='flex gap-2'>
-                        <input className='w-3' type="checkbox" value={'Format'} onChange={toggleSubCategory}/> Format
-                    </p>
-                    <p className='flex gap-2'>
                         <input className='w-3' type="checkbox" value={'Delivery Day'} onChange={toggleSubCategory}/> Delivery Day
                     </p>
                 </div>
-            </div>
+            </div>)}
         </div>
         {/* Right side */}
         <div className='flex-1'>
