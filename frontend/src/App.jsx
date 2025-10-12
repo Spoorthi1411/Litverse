@@ -28,6 +28,7 @@ const App = () => {
         <Route path='/collection' element={<Collection/>}/>
         <Route path='/place-order' element={<PlaceOrder/>}/>
       </Routes>
+      <Footer/>
     </div>
   )
 }
