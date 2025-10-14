@@ -20,7 +20,10 @@ import star_icon from './star_icon.png';
 import star_dull_icon from './star_dull_icon.png';
 import razorpay_logo from './razorpay_logo.png';
 import stripe_logo from './stripe_logo.png'
-import tStates from './tStates.jpg'
+import tStates from './tStates.jpg';
+import exchange_icon from './exchange_icon.png';
+import quality_icon from './quality_icon.png';
+import support_img from './support_img.png';
 
 export const assets = {
     cart_icon,
@@ -44,7 +47,10 @@ export const assets = {
     star_icon,
     star_dull_icon,
     razorpay_logo,stripe_logo,
-    tStates
+    tStates,
+    exchange_icon,
+    quality_icon,
+    support_img
 }
 
 export const products = [
