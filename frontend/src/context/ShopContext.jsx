@@ -3,6 +3,8 @@ import {createContext,useState} from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import { toast } from 'react-toastify';
+import { products as data } from '../assets/assets';
+
 
 export const ShopContext = createContext();
 
@@ -13,7 +15,7 @@ const ShopContextProvider = (props) => {
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
     const [search,setSearch] = useState('');
     const [showSearch,setShowSearch] = useState(false);
-    const [products,setProducts] = useState([]);
+    const [products, setProducts] = useState(data);
     const [cartItems,setCartItems]= useState({});
     const [token,setToken] = useState('');
 

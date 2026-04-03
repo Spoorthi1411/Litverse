@@ -10,6 +10,7 @@ import Login from './pages/Login'
 import Product from './pages/Product'
 import PlaceOrder from './pages/PlaceOrder'
 import Footer from './components/Footer'
+import Contact from './pages/Contact'
 
 
 // import { ToastContainer, toast } from "react-toastify";
@@ -23,6 +24,7 @@ const App = () => {
       <SearchBar/>
       <Routes>
         <Route path='/' element={<Home/>} />
+         <Route path="/contact" element={<Contact />} />
         <Route path='/product/:productId' element = {<Product/>} />
         <Route path='/cart' element={<Cart/>} />
         <Route path='/about' element={<About/>}/>
