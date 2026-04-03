@@ -9,6 +9,8 @@ import Collection from './pages/Collection'
 import Login from './pages/Login'
 import Product from './pages/Product'
 import PlaceOrder from './pages/PlaceOrder'
+import Footer from './components/Footer'
+
 
 // import { ToastContainer, toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
