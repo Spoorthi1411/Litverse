@@ -2,7 +2,7 @@
 
 //placing orders using COD method
 
-import userModel from "../models/userModel";
+import userModel from '../models/userModel.js';
 
 const placeOrder = async (req,res) =>{
 
